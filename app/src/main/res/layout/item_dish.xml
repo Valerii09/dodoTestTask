@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="8dp">
 
-
+    <!-- Изображение слева -->
     <ImageView
         android:id="@+id/dishImageView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
         android:scaleType="centerCrop"
         android:src="@drawable/pizza_image" />
 
+    <!-- Контейнер для текста справа -->
+    <FrameLayout
+        android:layout_width="171dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="8dp">
 
-    <!-- TextView для отображения имени блюда -->
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Dish Name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
 
-    <!-- TextView для отображения описания блюда -->
-    <TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="Dish Description" />
+            <!-- TextView для отображения имени блюда -->
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dish Name"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <!-- TextView для отображения цены блюда -->
-    <TextView
-        android:id="@+id/priceTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Price: $0.00" />
+            <!-- TextView для отображения описания блюда -->
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dish Description"
+                android:textSize="14sp" />
+        </LinearLayout>
 
+        <!-- TextView для отображения цены блюда в квадрате -->
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="87dp"
+            android:layout_height="32dp"
+            android:textColor="#FD3A69"
+            android:text="от 340 р"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="@drawable/square_background"
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_gravity="bottom|end"
+            />
+    </FrameLayout>
 </LinearLayout>
+
+
