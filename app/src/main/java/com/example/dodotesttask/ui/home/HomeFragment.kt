@@ -16,11 +16,12 @@ import com.example.dodotesttask.viewModel.DishViewModelFactory
 
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var dishViewModel: DishViewModel
+    private lateinit var adapter: DishAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,19 +31,19 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val recyclerView: RecyclerView = binding.recyclerView
+        recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        val adapter = DishAdapter()
+        adapter = DishAdapter()
 
         val repository = DishRepository() // Создание экземпляра репозитория
 
         val viewModelFactory = DishViewModelFactory(repository) // Создание экземпляра фабрики
 
-        dishViewModel = ViewModelProvider(this, viewModelFactory).get(DishViewModel::class.java) // Получение DishViewModel через фабрику
+        dishViewModel = ViewModelProvider(this, viewModelFactory).get(DishViewModel::class.java)
         dishViewModel.getDishes().observe(viewLifecycleOwner, { dishes ->
-            adapter.submitList(dishes)
+            val allDishes = dishes.values.flatten() // Объединение всех списков блюд из категорий в один список
+            adapter.submitList(allDishes) // Передача общего списка блюд в адаптер
         })
-
         recyclerView.adapter = adapter
 
         return root
@@ -53,3 +54,4 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
+
