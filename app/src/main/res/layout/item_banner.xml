@@ -2,18 +2,17 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
     android:layout_height="112dp"
-    android:layout_gravity="start"
     android:layout_marginLeft="16dp"
-    android:layout_marginTop="96px"
-    android:background="@drawable/rounded_corners_background">
+    android:layout_marginTop="96dp"
+    android:background="@drawable/rounded_corners_background"
+    android:layout_gravity="start">
 
-    <!-- Ваш контент баннера -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Ваш контент здесь"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+    <!-- Изображение SVG -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bannerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
 
 </FrameLayout>
