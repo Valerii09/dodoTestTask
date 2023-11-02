@@ -10,9 +10,12 @@
     <!-- Изображение SVG -->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/bannerImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-    />
+        android:layout_width="300dp"
+        android:layout_height="112dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_corners_background" />
+
 
 
 </FrameLayout>

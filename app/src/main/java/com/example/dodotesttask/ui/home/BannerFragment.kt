@@ -22,6 +22,7 @@ class BannerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         val view = inflater.inflate(R.layout.fragment_banners, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewBanners)
 
