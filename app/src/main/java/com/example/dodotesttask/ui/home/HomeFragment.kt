@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dodotesttask.R
 import com.example.dodotesttask.databinding.FragmentHomeBinding
 import com.example.dodotesttask.viewModel.DishAdapter
 import com.example.dodotesttask.viewModel.DishRepository
@@ -44,6 +45,12 @@ class HomeFragment : Fragment() {
         })
 
         recyclerView.adapter = adapter
+
+        val fragmentTransaction = childFragmentManager.beginTransaction()
+        val categoriesFragment = CategoriesFragment()
+
+        fragmentTransaction.replace(R.id.category_container, categoriesFragment)
+        fragmentTransaction.commit()
 
         return root
     }
