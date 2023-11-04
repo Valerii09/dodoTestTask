@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="112dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="16dp"
-    android:layout_marginTop="96dp"
-    android:background="@drawable/rounded_corners_background"
-    android:layout_gravity="start">
+    android:background="@drawable/rounded_corners_background">
 
     <!-- Изображение SVG -->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/bannerImage"
         android:layout_width="300dp"
         android:layout_height="112dp"
-        android:scaleType="centerCrop"
         android:adjustViewBounds="true"
-        android:background="@drawable/rounded_corners_background" />
-
+        android:background="@drawable/rounded_corners_background"
+        android:scaleType="centerCrop" />
 
 
 </FrameLayout>

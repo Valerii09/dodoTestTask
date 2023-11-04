@@ -7,10 +7,28 @@
     android:layout_height="match_parent">
 
     <FrameLayout
+        android:id="@+id/cityInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        tools:layout="@layout/fragment_city_info"
+        tools:ignore="MissingConstraints">
+
+        <fragment
+            android:id="@+id/cityInfoFragment"
+            android:name="com.example.dodotesttask.ui.home.CityInfoFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_city_info"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/bannerFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityInfoContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -18,17 +36,25 @@
             android:id="@+id/bannerFragment"
             android:name="com.example.dodotesttask.ui.home.BannerFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:layout="@layout/item_banner"
+            />
     </FrameLayout>
-
 
     <FrameLayout
         android:id="@+id/category_container"
-        app:layout_constraintTop_toBottomOf="@id/bannerFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="NotSibling" />
+        app:layout_constraintTop_toBottomOf="@id/bannerFragmentContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout="@layout/fragment_categories">
 
+
+        <!-- Ваш фрагмент с категориями -->
+        <!-- Пример: <fragment ... /> -->
+
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -38,4 +64,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
